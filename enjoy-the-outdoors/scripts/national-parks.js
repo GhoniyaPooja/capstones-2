@@ -2,6 +2,9 @@ function init() {
   //get the select list element in a variable
   const statesList = document.querySelector("#statesList");
   const parkDetailesTb = document.querySelector("#parkDetailesTb");
+  const parkList = document.querySelector("#parkList");
+  const parkTb = document.querySelector("#parkTb");
+  const radiobtnForm = document.getElementById("radiobtnForm");
   const locationOption = document.querySelector("#locationOption");
   const byTypeOption = document.querySelector("#byTypeOption");
 
@@ -16,34 +19,26 @@ function init() {
   }
 
   //park type dropdown
-  const parkList = document.querySelector("#parkList");
-  const parkTb = document.querySelector("#parkTb");
 
-  for (const nationalParkArray of nationalParksArray) {
+  for (const parkTypesArrayList of parkTypesArray) {
     //create option element
     const parkOption = document.createElement("option");
-    parkOption.value = nationalParkArray.LocationName;
-    parkOption.innerText = nationalParkArray.LocationName;
+    parkOption.value = parkTypesArrayList;
+    parkOption.innerText = parkTypesArrayList;
     parkList.appendChild(parkOption);
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  
   const dropdown = document.getElementById("statesList");
-  
+
   dropdown.addEventListener("change", function () {
     const selectedValue = dropdown.value;
     parkDetailesTb.innerHTML = "";
 
     const stateParkResults = nationalParksArray.filter(
-      (State) => State.State === selectedValue
+      (State) => State.State == selectedValue
     );
-
-
-
-
-
 
     if (stateParkResults.length > 0) {
       stateParkResults.forEach((stateParkResult) => {
@@ -80,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cellLongituse.innerText = stateParkResult.Longitude;
 
         let cellLocation = row.insertCell(10);
-        cellLocation.innerText = stateParkResult.Location;
+        cellLocation.innerText = stateParkResult.Location.coordinates;
 
         parkDetailesTb.appendChild(row);
       });
@@ -89,69 +84,66 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
   //////////////////// Park Table
 
-  
   const parkListDropdown = document.getElementById("parkList");
- 
+
   parkListDropdown.addEventListener("change", function () {
     const parkSelectedValue = parkListDropdown.value;
     parkTb.innerHTML = "";
 
-    const parkNameResults = nationalParksArray.filter(
-      (LocationName) => LocationName.LocationName == parkSelectedValue
-    );
-    if (parkNameResults.length > 0) {
-      parkNameResults.forEach((parkNameResult) => {
+    nationalParksArray.forEach((nationalParkData) => {
+      const nationalParkDataMatch =
+        nationalParkData.LocationName.match(parkSelectedValue);
+      if (nationalParkDataMatch) {
         const row = parkTb.insertRow();
 
-
         let cellParkName = row.insertCell(0);
-        cellParkName.innerText = parkNameResult.LocationName;
+        cellParkName.innerText = nationalParkData.LocationName;
 
         let cellParkAddress = row.insertCell(1);
-        cellParkAddress.innerText = parkNameResult.Address;
+        cellParkAddress.innerText = nationalParkData.Address;
 
         let cellParkCity = row.insertCell(2);
-        cellParkCity.innerText = parkNameResult.City;
+        cellParkCity.innerText = nationalParkData.City;
 
         let cellParkState = row.insertCell(3);
-        cellParkState.innerText = parkNameResult.State;
+        cellParkState.innerText = nationalParkData.State;
 
         let cellParkZip = row.insertCell(4);
-        cellParkZip.innerText = parkNameResult.ZipCode;
+        cellParkZip.innerText = nationalParkData.ZipCode;
 
         let cellParkPhone = row.insertCell(5);
-        cellParkPhone.innerText = parkNameResult.Phone;
+        cellParkPhone.innerText = nationalParkData.Phone;
 
         let cellParkWebsite = row.insertCell(6);
-        cellParkWebsite.innerText = parkNameResult.Visit;
+        cellParkWebsite.innerText = nationalParkData.Visit;
 
-
-        parkTb.appendChild(parkRow);
-      });
-    } else {
-      parkTb.append("No data found");
-    }
+        parkTb.appendChild(row);
+      }
+    });
   });
 
-
   ///redio button
-  locationOption.addEventListener("chande", function() {
-    if (this.checked) {
-      option.style.display = 'block';
-      table.style.display = 'block';
-    }
-  })
-  byTypeOption.addEventListener("change", function () {
-    if (this.checked) {
-      byTypeOption.display = 'block';
-      table.style.display = 'table';
-    }
-  })
 
-
+  radiobtnForm.addEventListener("change", function (event) {
+    parkDetailesTb.innerHTML = "";
+    parkTb.innerHTML = "";
+    statesList.selectedIndex = 0;
+    parkList.selectedIndex = 0;
+    if (event.target.name == "toggle") {
+      if (event.target.value == "selectStateDiv") {
+        selectStateDiv.classList.remove("hidden");
+        parkTypeDiv.classList.add("hidden");
+      } else if (event.target.value == "parkTypeDiv") {
+        selectStateDiv.classList.add("hidden");
+        parkTypeDiv.classList.remove("hidden");
+      } else if (event.target.value == "none") {
+        selectStateDiv.classList.add("hidden");
+        parkTypeDiv.classList.add("hidden");
+      }
+    }
+  });
 });
 
 //wait for html to load and then call init function

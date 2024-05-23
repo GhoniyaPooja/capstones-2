@@ -13,14 +13,14 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.getElementById("mountainList");
+const dropdown = document.getElementById("mountainList");
 
   dropdown.addEventListener("change", function () {
     const selectedValue = dropdown.value;
     mountainDetails.innerHTML = "";
 
     const mountainsDetail = mountainsArray.find(
-      (name) => name.name === selectedValue
+      (name) => name.name == selectedValue
     );
     //
     if (mountainsDetail) {
@@ -45,10 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
         mountainsDetail.elevation;
       mountainDiv.appendChild(mountElevation);
 
-      // let mountEffort = document.createElement("p");
-      // mountEffort.classList.add("card-body");
-      // mountEffort.innerText = "Effort : " + mountainsDetail.effort;
-      // mountainDiv.appendChild(mountEffort);
+      let mountEffort = document.createElement("p");
+      mountEffort.classList.add("card-body");
+      mountEffort.innerText = "Effort : " + mountainsDetail.effort;
+      mountainDiv.appendChild(mountEffort);
+
+      let mountDesc = document.createElement("p");
+      mountDesc.classList.add("card-body");
+      mountDesc.innerText = "Desc : " + mountainsDetail.desc;
+      mountainDiv.appendChild(mountDesc);
+
+      let mountCoords = document.createElement("p");
+      mountCoords.classList.add("card-body");
+      mountCoords.innerText = "Coords : " + "Lat:" + mountainsDetail.coords.lat + " Lng:" + mountainsDetail.coords.lng;
+      mountainDiv.appendChild(mountCoords);
 
       mountainDetails.append(mountainDiv);
     } else {
