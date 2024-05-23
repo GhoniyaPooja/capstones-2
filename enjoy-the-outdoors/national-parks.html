@@ -1,161 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <style>
-      .hidden {
-        display: none;
-      }
-    </style>
-  </head>
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-body">
-        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.05);">
-          <div class="collapse navbar-collapse" id="navbarExample01">
-              <div class="navbar-header"><svg id="logo-89" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="ccustom" d="M39.9449 21.4998H32.8003C26.5594 21.4998 21.5003 26.559 21.5003 32.7998V39.9444C31.3502 39.214 39.2145 31.3497 39.9449 21.4998Z" fill="#775732"></path><path class="ccustom" d="M18.5003 39.9444V32.7998C18.5003 26.559 13.4411 21.4998 7.20026 21.4998H0.0556641C0.785998 31.3497 8.65036 39.214 18.5003 39.9444Z" fill="#775732"></path><path class="ccustom" d="M39.9449 18.4998C39.2145 8.64987 31.3502 0.78551 21.5003 0.0551758V7.19977C21.5003 13.4406 26.5594 18.4998 32.8003 18.4998H39.9449Z" fill="#775732"></path><path class="ccustom" d="M18.5003 0.0551758C8.65036 0.78551 0.785998 8.64987 0.0556641 18.4998H7.20026C13.4411 18.4998 18.5003 13.4406 18.5003 7.19977V0.0551758Z" fill="#775732"></path><path class="ccustom" d="M13.583 19.9998C16.3555 18.6145 18.615 16.355 20.0002 13.5825C21.3855 16.355 23.6449 18.6145 26.4175 19.9998C23.6449 21.385 21.3855 23.6445 20.0002 26.417C18.615 23.6445 16.3555 21.385 13.583 19.9998Z" fill="#CA9352"></path></svg>
-          
-              </div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="national-parks.html">National Parks</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mountains.html">Mountains</a>
-              </li>
-            </ul>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    body {
+      background: url('https://i0.wp.com/thepointsguy.com/wp-content/uploads/2017/03/GettyImages-699105317.jpg?fit=2121%2C1414px&ssl=1') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .navbar {
+      background-color:fff(221, 217, 217, 0.7) !important;
+    }
+
+    .navbar-brand svg {
+      fill: #CA9352;
+    }
+
+    h1, h4, h5 {
+      color: #fff;
+    }
+
+    .container {
+      background-color: rgba(83, 76, 76, 0.342);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .customFooter {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.151);
+      color: #fff;
+    }
+
+    table th, table td {
+      color: #f7f4f415;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body">
+      <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.05)">
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <div class="navbar-header">
+            <svg id="logo-89" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="ccustom"
+                d="M39.9449 21.4998H32.8003C26.5594 21.4998 21.5003 26.559 21.5003 32.7998V39.9444C31.3502 39.214 39.2145 31.3497 39.9449 21.4998Z"
+                fill="#775732"></path>
+              <path class="ccustom"
+                d="M18.5003 39.9444V32.7998C18.5003 26.559 13.4411 21.4998 7.20026 21.4998H0.0556641C0.785998 31.3497 8.65036 39.214 18.5003 39.9444Z"
+                fill="#775732"></path>
+              <path class="ccustom"
+                d="M39.9449 18.4998C39.2145 8.64987 31.3502 0.78551 21.5003 0.0551758V7.19977C21.5003 13.4406 26.5594 18.4998 32.8003 18.4998H39.9449Z"
+                fill="#775732"></path>
+              <path class="ccustom"
+                d="M18.5003 0.0551758C8.65036 0.78551 0.785998 8.64987 0.0556641 18.4998H7.20026C13.4411 18.4998 18.5003 13.4406 18.5003 7.19977V0.0551758Z"
+                fill="#775732"></path>
+              <path class="ccustom"
+                d="M13.583 19.9998C16.3555 18.6145 18.615 16.355 20.0002 13.5825C21.3855 16.355 23.6449 18.6145 26.4175 19.9998C23.6449 21.385 21.3855 23.6445 20.0002 26.417C18.615 23.6445 16.3555 21.385 13.583 19.9998Z"
+                fill="#CA9352"></path>
+            </svg>
           </div>
-        </div>
-      </nav>
-    </header>
-
-    <main class="mt-5">
-
-      <div class="container mb-5">
-
-        <h1>Find a Parks</h1>
-
-        <fieldset id="radiobtnForm">
-          <h4>
-            <input
-              type="radio"
-              name="toggle"
-              value="selectStateDiv"
-              id="locationOption"
-              checked
-            />
-            <label for="locationOption">By Location</label>
-            <input
-              type="radio"
-              name="toggle"
-              value="parkTypeDiv"
-              id="byTypeOption"
-            />
-            <label for="byTypeOption">By Park Type</label>
-          </h4>
-        </fieldset>
-        <div id="selectStateDiv">
-          <h5>Select State</h5>
-          <select
-            id="statesList"
-            class="form-select"
-            aria-label="Default select example"
-          >
-            <option value="">Select...</option>
-          </select>
-
-          <table class="table table-light table-striped">
-            <thead>
-              <tr>
-                <th>Location Id</th>
-                <th>Location Name</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>Phone</th>
-                <th>Fax</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-                <th>Location</th>
-              </tr>
-            </thead>
-            <tbody id="parkDetailesTb"></tbody>
-          </table>
-        </div>
-        <div id="parkTypeDiv" class="hidden">
-          <h5>Park Type</h5>
-          <select
-            id="parkList"
-            class="form-select"
-            aria-label="Default select example"
-          >
-            <option value="">Select...</option>
-          </select>
-          <table class="table table-light table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>Phone</th>
-                <th>Website</th>
-              </tr>
-            </thead>
-            <tbody id="parkTb"></tbody>
-          </table>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="national-parks.html">National Parks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mountains.html">Mountains</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </main>
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-      <div
-        class="text-center p-4"
-        style="background-color: rgba(0, 0, 0, 0.05)"
-      >
-        © 2024 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
-          >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        </a>
+    </nav>
+  </header>
+
+  <main class="mt-5">
+    <div class="container mb-5">
+      <h1>Find a Parks</h1>
+      <fieldset id="radiobtnForm">
+        <h4>
+          <input type="radio" name="toggle" value="selectStateDiv" id="locationOption" checked />
+          <label for="locationOption">By Location</label>
+          <input type="radio" name="toggle" value="parkTypeDiv" id="byTypeOption" />
+          <label for="byTypeOption">By Park Type</label>
+        </h4>
+      </fieldset>
+      <div id="selectStateDiv">
+        <h5>Select State</h5>
+        <select id="statesList" class="form-select" aria-label="Default select example">
+          <option value="">Select...</option>
+        </select>
+
+        <table class="table table-light table-striped">
+          <thead>
+            <tr>
+              <th>Location Id</th>
+              <th>Location Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip Code</th>
+              <th>Phone</th>
+              <th>Fax</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody id="parkDetailesTb"></tbody>
+        </table>
       </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="scripts/locationData.js"></script>
-    <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/nationalParkData.js"></script>
+      <div id="parkTypeDiv" class="hidden">
+        <h5>Park Type</h5>
+        <select id="parkList" class="form-select" aria-label="Default select example">
+          <option value="">Select...</option>
+        </select>
+        <table class="table table-light table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip Code</th>
+              <th>Phone</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody id="parkTb"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted customFooter">
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit.
+      </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="scripts/locationData.js"></script>
+  <script src="scripts/parkTypeData.js"></script>
+  <script src="scripts/nationalParkData.js"></script>
 
-    <script src="scripts/national-parks.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+  <script src="scripts/national-parks.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
