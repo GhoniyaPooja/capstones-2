@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        if (nationalParkData.Visit) {
+        
         
           
 
@@ -163,9 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
 
-        } else {
-          cellParkWebsite.innerText = "N/A";
-        }
+        
 
 
        
