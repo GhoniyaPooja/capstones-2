@@ -77,25 +77,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let cellLocation = row.insertCell(10);
         cellLocation.innerText = stateParkResult.Location.coordinates;
 
-
-
-
         if (stateParkResult.Phone) {
           cellPhone.innerText = stateParkResult.Phone;
         } else {
           cellPhone.innerText = "N/A";
         }
 
-
         if (stateParkResult.Fax) {
           cellFax.innerText = stateParkResult.Fax;
         } else {
           cellFax.innerText = "N/A";
         }
-
-
-
-
 
         parkDetailesTb.appendChild(row);
       });
@@ -139,36 +131,21 @@ document.addEventListener("DOMContentLoaded", function () {
         let cellParkWebsite = row.insertCell(6);
         // cellParkWebsite.innerText = nationalParkData.Visit;
 
-
-  
         if (nationalParkData.Phone) {
           cellParkPhone.innerText = nationalParkData.Phone;
         } else {
           cellParkPhone.innerText = "N/A";
         }
 
-
-        
-        
-          
-
-          if (nationalParkData.Visit) {
-            const visitLink = document.createElement("a");
-            visitLink.href = nationalParkData.Visit;
-            visitLink.innerText = "Visit";
-            visitLink.target = "_blank";
-            cellParkWebsite.appendChild(visitLink);
-          } else {
-            cellParkWebsite.innerText = "N/A";
-          }
-
-
-        
-
-
-       
-        
-       
+        if (nationalParkData.Visit) {
+          const visitLink = document.createElement("a");
+          visitLink.href = nationalParkData.Visit;
+          visitLink.innerText = "Visit";
+          visitLink.target = "_blank";
+          cellParkWebsite.appendChild(visitLink);
+        } else {
+          cellParkWebsite.innerText = "N/A";
+        }
 
         parkTb.appendChild(row);
       }
